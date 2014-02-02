@@ -11,4 +11,7 @@ div:hover {
 	background-color: green;
 	transition: 1000ms ease;
 	-webkit-transition: 1000ms ease;
+
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
 }
