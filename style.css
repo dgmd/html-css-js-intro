@@ -9,4 +9,6 @@ div {
 
 div:hover {
 	background-color: green;
+	transition: 1000ms ease;
+	-webkit-transition: 1000ms ease;
 }
