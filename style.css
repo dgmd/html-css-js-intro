@@ -6,3 +6,7 @@ div {
 	top: 0;
 	left: 0;
 }
+
+div:hover {
+	background-color: green;
+}
