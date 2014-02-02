@@ -10,8 +10,9 @@ div:hover {
 	transition: 1000ms ease;
 	-webkit-transition: 1000ms ease;
 
-	transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
+	/* Rotate only 10 degrees so that the effect of translate is more obvious */
+	transform: rotate(10deg);
+	-webkit-transform: rotate(10deg);
 }
 
 #one {
@@ -31,4 +32,9 @@ div:hover {
 
 	top: 200px;
 	left: 200px;
+}
+
+#one:active {
+	transform: translate(200px,200px);
+	-webkit-transform: translate(200px,200px);
 }
