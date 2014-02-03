@@ -1,43 +1,63 @@
-
+console.log('Creating #two');
 var two = document.createElement('div');
 two.id = 'two';
 document.body.appendChild(two);
 
+console.log('Creating #one');
 var one = document.createElement('div');
 one.id = 'one';
+
+console.log('Putting #two inside #one');
 two.appendChild(one);
 
+console.log('Making #one yellow');
 one.setAttribute('style','background-color: yellow;');
 
-function moveSquare(x, y) {
-	// Open an animation frame
+function move(element, x, y) {
+	element.style.left = x;
+	element.style.top = y;
+}
+
+function animateMove(element, xFinal, yFinal) {
+	var time = null;
+	var now = new Date().getTime(),
+        dt = 1;
+	var speed = 1;
+
+    time = now;
+    xPos = getPosition(element, 'left');
+    yPos = getPosition(element, 'top');
+
+    var xMoveTo = xPos + speed*dt + 'px';
+    var yMoveTo = yPos + speed*dt + 'px';
+
+    if (!(xMoveTo > xFinal || yMoveTo > yFinal)) {
+		move(element, xMoveTo, yMoveTo);
+	}
+}
+
+function moveSquare() {
 	var animationFrame = webkitRequestAnimationFrame(moveSquare);
 
-	var element = document.getElementById('two');
-	
-	var finalX = getPosition(element, 'left') + x;
-	var finalY = getPosition(element, 'top') + y;
+	animateMove(two, xMax, yMax);
 
-	var remainingX = finalX, remainingY = finalY;
-
-	while (remainingX > 0 && remainingY > 0) {
-		var newTop = getPosition(element, 'top') + stepSize;
-		element.style.top = newTop + 'px';
-		remainingY -= stepSize;
-
-		var newLeft = getPosition(element, 'left') + stepSize;
-		element.style.left = newLeft + 'px';
-		remainingX -= stepSize;
+	if (xPos > xMax || yPos > yMax) {
+		console.log("Closing the animation frame; xPos = " + xMax + " and yPos = " + yPos);
+		webkitCancelAnimationFrame(animationFrame);
+		console.log("Done moving the square; either xPos > xMax or yPos > yMax");
 	}
-
-	// Close the animation frame; we don't need the GPU any more
-	webkitCancelAnimationFrame(animationFrame);
 }
 
 function getPosition(element, attribute) {
 	return parseInt(window.getComputedStyle(element)[attribute], 10);
 }
 
+console.log("Getting the position of #two");
+var xMin = getPosition(two, 'left');
+var xMax = window.innerWidth - getPosition(two, 'width');
 
-// Actually move the square
-moveSquare(100, 100);
+var yMin = getPosition(two, 'top');
+var yMax = window.innerWidth - getPosition(two, 'height');
+
+console.log("Actually begining to move #two using moveSquare");
+moveSquare();
