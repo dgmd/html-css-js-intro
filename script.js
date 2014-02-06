@@ -19,7 +19,7 @@ function moveSquare(x, y) {
 	var finalY = getPosition(element, 'top') + y;
 
 	var remainingX = finalX, remainingY = finalY;
-
+	var stepSize = 1;
 	while (remainingX > 0 && remainingY > 0) {
 		var newTop = getPosition(element, 'top') + stepSize;
 		element.style.top = newTop + 'px';
