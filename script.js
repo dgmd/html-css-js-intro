@@ -60,4 +60,8 @@ var yMin = getPosition(two, 'top');
 var yMax = window.innerWidth - getPosition(two, 'height');
 
 console.log("Actually begining to move #two using moveSquare");
+<<<<<<< HEAD
 moveSquare();
+=======
+moveSquare();
+>>>>>>> e9cd02067bfc1ca4d0e2993262d89673215e6a57
