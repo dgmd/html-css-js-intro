@@ -1,9 +1,9 @@
-HTML-CSS-JS-Hangout-1
+> Archived from Spring 2014, still being updated
+
+HTML/CSS/JS Intro
 =====================
 
-This repository contains code examples (structured as a series of commits) for the first HTML/CSS/JS Hangout (scheduled for 3 February 2014).
-
-We ended up cancelling the Hangout because of some technical issues, but in the meantime we put together a [rough screencast](https://www.youtube.com/watch?v=Gi7tfBhlzvc) which walks you through the basics of the evolution of this repository, building out an HTML page with CSS styling and some JavaScript animation from scratch.
+We put together a [rough screencast](https://www.youtube.com/watch?v=AS9Tr4gNCP0) which walks you through the basics of the evolution of this repository, building out an HTML page with CSS styling and some JavaScript animation from scratch.
 
 
 ### Linked Version History of this Repository
